@@ -21,7 +21,7 @@ boolean getIsShellfish()
 
 This is pretty much the same interface that we defined to represent an ingredient in assignment 3 with a couple of new methods. Specifically, an ingredient can report whether or not the ingredient is a form of rice or shellfish in addition to whether it is vegetarian or not. Additionally, an ```Ingredient``` object can compare itself with another ```Ingredient``` object with the ```equals``` method. This method should return true if the ```Ingredient``` object passed as a parameter has the same name, the same calories per ounce, is within $0.01 in price per ounce, and has the same characteristics.
 
-Now create eight classes which implement the ```Ingredient``` interface called Avocado, Crab, Eel, Rice, Yellowtail, Seaweed, Shrimp, and Tuna. The characteristics of these classes are given in the following table:
+Now create eight classes which implement the ```Ingredient``` interface called ```Avocado```, ```Crab```, ```Eel```, ```Rice```, ```Yellowtail```, ```Seaweed```, ```Shrimp```, and ```Tuna```. The characteristics of these classes are given in the following table:
 
 | Class Name | Name | Price/Oz. | Calories/Oz. | Vegetarian? | Rice? | Shellfish? |
 |------------|------|-----------|--------------|-------------|-------|------------|
