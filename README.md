@@ -56,9 +56,9 @@ boolean getIsShellfish()
 IngredientPortion combine(IngredientPortion other)
 ```
 
-Again, this is pretty much the same interface for representing a specific amount of an ingredient that we used in assignment 3 with a few methods added. In particular, the methods that report whether the underlying ingredient is a form of rice or shellfish have been added. Also, the getCalories and getCost methods should return the number of calories and price for the specific amount of the ingredient without rounding.
+Again, this is pretty much the same interface for representing a specific amount of an ingredient that we used in assignment 3 with a few methods added. In particular, the methods that report whether the underlying ingredient is a form of rice or shellfish have been added. Also, the ```getCalories``` and ```getCost``` methods should return the number of calories and price for the specific amount of the ingredient without rounding.
 
-The combine method should have the same functionality as in assignment 3. Namely, if the ingredient portion provided as the parameter ```other``` is null, then the result of combine should just be a reference to the original ingredient portion. If the ingredient associated with ```other``` is not the same ingredient, then throw a ```RuntimeException```. You should use the ```equals``` method that we added to the ```Ingredient``` interface to compare ```Ingredient``` objects. If the two ingredient portions are the same type of ingredient, ```combine``` should return a new ```IngredientPortion``` object which represents their combined amount.
+The ```combine``` method should have the same functionality as in assignment 3. Namely, if the ingredient portion provided as the parameter ```other``` is null, then the result of ```combine``` should just be a reference to the original ingredient portion. If the ingredient associated with ```other``` is not the same ingredient, then throw a ```RuntimeException```. You should use the ```equals``` method that we added to the ```Ingredient``` interface to compare ```Ingredient``` objects. If the two ingredient portions are the same type of ingredient, ```combine``` should return a new ```IngredientPortion``` object which represents their combined amount.
 
 Now create eight classes that implement ```IngredientPortion``` called ```AvocadoPortion```, ```CrabPortion```, ```EelPortion```, ```RicePortion```, ```YellowtailPortion```, ```SeaweedPortion```, ```ShrimpPortion```, and ```TunaPortion```. All of these classes should provide a constructor that accepts a single parameter that indicates the amount of the portion in ounces. For example, for the ```AvocadoPortion``` class, the constructor should look like this:
 
@@ -68,7 +68,7 @@ public AvocadoPortion (double amount)
 
 The constructor should throw a ```RuntimeException``` if the amount specified is not greater than 0. The ```Ingredient``` associated with each of these classes should be an instance of the corresponding ingredient class (i.e., ```AvocadoPortion``` should use an instance of ```Avocado``` as its ingredient). These classes should implement the ```combine``` method so that the appropriate subclass is used. For example, combining an instance of ```AvocadoPortion``` with another instance of ```AvocadoPortion``` should return a new instance of ```AvocadoPortion```.
 
-Again the easiest way to do this is to use a parent class that implements an ingredient portion generally with the subclasses simply providing the appropriate constructor and any subclass-specific method implementations that can not be provided generally (HINT: you'll need a subclass specific version of combine).
+Again the easiest way to do this is to use a parent class that implements an ingredient portion generally with the subclasses simply providing the appropriate constructor and any subclass-specific method implementations that can not be provided generally (HINT: you'll need a subclass specific version of ```combine```).
 
 As you implement these classes, think about whether or not you can do so in a way that reuses the same ingredient instance for every ingredient portion of the same type. This is not necessary for full points but just a challenge.
 
@@ -92,13 +92,13 @@ Create the following three classes which implement the Sushi interface.
 
 ### Sashimi
 
-A piece of Sashimi is comprised of 0.75 ounces of some type of seafood. There are five types of sashimi: tuna, yellowtail, eel, crab, and shrimp. The Sashimi class should define a public enumeration called SashimiType with the following definition:
+A piece of sashimi is comprised of 0.75 ounces of some type of seafood. There are five types of sashimi: tuna, yellowtail, eel, crab, and shrimp. The ```Sashimi``` class should define a public enumeration called ```SashimiType``` with the following definition:
 
 ```
 public enum SashimiType {TUNA, YELLOwTAIL, EEL, CRAB, SHRIMP};
 ```
 
-The Sashimi class should have a constructor with the following signature:
+The ```Sashimi``` class should have a constructor with the following signature:
 
 ```
 public Sashimi(SashimiType type)
@@ -108,7 +108,7 @@ The value of ```type``` passed to the constructor indicates what type of sashimi
 
 ### Nigiri
 
-A piece of ```Nigiri``` is comprised of 0.75 ounces of some type of seafood and 0.5 ounces of rice. There are five types of nigiri: tuna, yellowtail, eel, crab, and shrimp. The ```Nigiri``` class should define a public enumeration called ```NigiriType``` with the following definition:
+A piece of nigiri is comprised of 0.75 ounces of some type of seafood and 0.5 ounces of rice. There are five types of nigiri: tuna, yellowtail, eel, crab, and shrimp. The ```Nigiri``` class should define a public enumeration called ```NigiriType``` with the following definition:
 
 ```
 public enum NigiriType {TUNA, YELLOWTAIL, EEL, CRAB, SHRIMP};
@@ -120,7 +120,7 @@ The ```Nigiri``` class should have a constructor with the following signature:
 public Nigiri(NigiriType type)
 ```
 
-The value of type passed to the constructor indicates what type of nigiri is being made. The name associated with a ```Nigiri``` object should be the name of the underlying seafood ingredient followed by the word "nigiri". For example, a tuna nigiri object should be produce the value "tuna nigiri" as the result of the ```getName``` method.
+The value of ```type``` passed to the constructor indicates what type of nigiri is being made. The name associated with a ```Nigiri``` object should be the name of the underlying seafood ingredient followed by the word "nigiri". For example, a tuna nigiri object should be produce the value "tuna nigiri" as the result of the ```getName``` method.
 
 ### Roll
 
@@ -130,9 +130,9 @@ A roll is a sushi creation that may be comprised of any number of different ingr
 public Roll(String name, IngredientPortion[] roll_ingredients)
 ```
 
-The name associated with a ```Roll``` object is provided as the first parameter to the constructor and the ingredient portions of the roll are provided as the second parameter. The constructor should check the validity of the ingredient portion array passed to it as well as the validity of the individual elements in the array. If the array is null or if any of the elements are null, throw a RuntimeException. For the adept-level tests, you may assume that no ingredient type will be repeated more than once.
+The name associated with a ```Roll``` object is provided as the first parameter to the constructor and the ingredient portions of the roll are provided as the second parameter. The constructor should check the validity of the ingredient portion array passed to it as well as the validity of the individual elements in the array. If the array is null or if any of the elements are null, throw a ```RuntimeException```. For the adept-level tests, you may assume that no ingredient type will be repeated more than once.
 
-Specifically do NOT use inheritance for these classes (i.e., Sashimi, Nigiri, and Roll). Implement each one as a separate class that implements the ```Sushi``` interface without using a common parent class.
+Specifically do NOT use inheritance for these classes (i.e., ```Sashimi```, ```Nigiri```, and ```Roll```). Implement each one as a separate class that implements the ```Sushi``` interface without using a common parent class.
 
 As I've mentioned before, be careful about working with arrays as parameters to and from constructors and methods. in particular, your ```Roll``` constructor should not just blindly copy the array reference passed in to a private field encapsulated in your ```Roll``` class. Instead, you should use the ```clone``` method of the array to make a copy that you can store safely. Similarly, you should not simply return an encapsulated array reference in order to implement the ```getIngredients``` method. You should create a new array to return each time.
 
@@ -142,4 +142,4 @@ Amend your ```Roll``` class to add the following functionality:
 
 The constructor should detect if a particular ingredient type is repeated and combine the separate portions of a repeated ingredient type into a single portion.
 
-The constructor should always include at least 0.1 ounces of SeaweedPortion as a component ingredient portion to represent the roll wrapper if the ingredient portion array passed to the constructor does not already include at least this much seaweed. If the ingredient portions passed to the constructor already have at least this much seaweed, you should not include any more.
+The constructor should always include at least 0.1 ounces of ```SeaweedPortion``` as a component ingredient portion to represent the roll wrapper if the ingredient portion array passed to the constructor does not already include at least this much seaweed. If the ingredient portions passed to the constructor already have at least this much seaweed, you should not include any more.
