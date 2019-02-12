@@ -42,7 +42,7 @@ public Avocado()
 
 You should employ inheritance to implement these classes. The easiest way to do this is to create a parent class that encapsulates all of the information about an ingredient explicitly as fields and implements the interface. The subclasses would then simply provide the constructor that uses the appropriate values from the table when calling the superclass constructor.
 
-Second, create a public interface called IngredientPortion with the following methods:
+Second, create a public interface called ```IngredientPortion``` with the following methods:
 
 ```
 Ingredient getIngredient()
