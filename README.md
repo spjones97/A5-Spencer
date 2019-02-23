@@ -54,19 +54,24 @@ Finally, create the following classes that all implement the Plate interface. Us
   A null value for contents indicates that the plate should be initially empty. Otherwise, the contents should be set, possibly throwing a PlatePriceException if the cost of the contents exceed the price of a RedPlate (i.e. 1.0).
 
 * GreenPlate
-  * A GreenPlate is associated with the color symbol Plate.Color.GREEN and has a price of 2.0. This class should provide a constructor with the following signature:
-public GreenPlate(Sushi contents) throws PlatePriceException
-A null value for contents indicates that the plate should be initially empty. Otherwise, the contents should be set, possibly throwing a PlatePriceException if the cost of the contents exceed the price of a GreenPlate (i.e. 2.0).
-BluePlate
-A BluePlate is associated with the color symbol Plate.Color.BLUE and has a price of 4.0. This class should provide a constructor with the following signature:
-public BluePlate(Sushi contents) throws PlatePriceException
-A null value for contents indicates that the plate should be initially empty. Otherwise, the contents should be set, possibly throwing a PlatePriceException if the cost of the contents exceed the price of a BluePlate (i.e. 4.0).
-GoldPlate
-A GoldPlate is associated with the color symbol Plate.Color.GOLD and has a variable price that must be at least 5.0. This class should provide a constructor with the following signature:
-public GoldPlate(Sushi contents, double price) throws PlatePriceException
-If the value of price given to the constructor is less than 5.0, the constructor should throw an IllegalArgumentException. A null value for contents indicates that the plate should be initially empty. Otherwise, the contents should be set, possibly throwing a PlatePriceException if the cost of the contents exceed the price of the plate.
-Turning In The Assignment
-Upload to the autograder as a single JAR file.
+  
+  A GreenPlate is associated with the color symbol Plate.Color.GREEN and has a price of 2.0. This class should provide a constructor with the following signature:
+  ```
+  public GreenPlate(Sushi contents) throws PlatePriceException
+  ```
+  A null value for contents indicates that the plate should be initially empty. Otherwise, the contents should be set, possibly throwing a PlatePriceException if the cost of the contents exceed the price of a GreenPlate (i.e. 2.0).
 
-Grading
-The assignment will be worth a total of 5 extra credit points.
+* BluePlate
+
+  A BluePlate is associated with the color symbol Plate.Color.BLUE and has a price of 4.0. This class should provide a constructor with the following signature:
+  ```
+  public BluePlate(Sushi contents) throws PlatePriceException
+  ```
+  A null value for contents indicates that the plate should be initially empty. Otherwise, the contents should be set, possibly throwing a PlatePriceException if the cost of the contents exceed the price of a BluePlate (i.e. 4.0).
+
+* GoldPlate
+  A GoldPlate is associated with the color symbol Plate.Color.GOLD and has a variable price that must be at least 5.0. This class should provide a constructor with the following signature:
+  ```
+  public GoldPlate(Sushi contents, double price) throws PlatePriceException
+  ```
+  If the value of price given to the constructor is less than 5.0, the constructor should throw an IllegalArgumentException. A null value for contents indicates that the plate should be initially empty. Otherwise, the contents should be set, possibly throwing a PlatePriceException if the cost of the contents exceed the price of the plate.
