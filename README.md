@@ -46,6 +46,7 @@ A class that implements the ```Plate``` interface will represent a plate that ma
 Finally, create the following classes that all implement the Plate interface. Use inheritance as you see necessary.
 
 * RedPlate
+
   A RedPlate is associated with the color symbol Plate.Color.RED and has a price of 1.0. This class should provide a constructor with the following signature:
   ```
   public RedPlate(Sushi contents) throws PlatePriceException
