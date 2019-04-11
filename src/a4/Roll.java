@@ -36,7 +36,7 @@ public class Roll implements Sushi{
 		int y=0; 
 		if(has(ingredArray, counter, seaweedPortion)){
 			while(y<counter) {
-				if((ingredArray[y].getName().equals("seaweed")) && (ingredArray[y].getAmount() <0.1)) {
+				if((ingredArray[y].getName().equals("seaweed")) && (ingredArray[y].getAmount()<0.1)) {
 						IngredientPortion seaweeds = new SeaweedPortion(0.1 - ingredArray[y].getAmount());
 						ingredArray[y] = ingredArray[y].combine(seaweeds);
 				}
@@ -83,14 +83,12 @@ public class Roll implements Sushi{
 	
 	public double getCost() {
 		double result = 0.0;
-		double holder = 0.0;
 		double value = 0.0;
 		for (int i=0; i<ingredientPortionArray.length; i++) {
-			holder = ingredientPortionArray[i].getCost();
 			result += ingredientPortionArray[i].getCost();
 		}
 		value = (int)((result * 100) + 0.5) / 100;
-		return value;
+		return result;
 	}
 	
 	public boolean getHasRice() {
