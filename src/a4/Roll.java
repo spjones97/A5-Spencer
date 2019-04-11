@@ -25,11 +25,12 @@ public class Roll implements Sushi{
 		int totalLength = roll_ingredients.length + 1;
 		int counter = 0;
 		int z=0;
+		
 		IngredientPortion[] ingredArray = new IngredientPortion[totalLength];
 		
 		for(int i=0; i<ingredientPortionArray.length; i++) {
 				while (z<counter) {
-					if(ingredientPortionArray[z].getName().equals(ingredArray[z].getName())){
+					if(ingredientPortionArray[z].getName().equals(ingredArray[i].getName())){
 						for (int f=0; f<counter; f++) {
 							if (ingredientPortionArray[i].getName().equals(ingredArray[f].getName())) {
 								ingredArray[f] = ingredArray[f].combine(ingredientPortionArray[z]);
@@ -44,6 +45,7 @@ public class Roll implements Sushi{
 		}
 		
 		IngredientPortion seaweedPortion = new SeaweedPortion(0.1);
+		
 		while (z<counter) {
 			if (seaweedPortion.getName().equals(ingredArray[z].getName())) {
 				for(int i=0; i<counter; i++) {
