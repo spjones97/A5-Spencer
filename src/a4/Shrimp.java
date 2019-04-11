@@ -2,7 +2,7 @@ package a4;
 
 public class Shrimp extends IngredientImple{
 	public Shrimp() {
-		super("shrimp", 1.67, 42);
+		super("shrimp", 0.65, 32);
 	}
 	
 	public boolean getIsRice() {
