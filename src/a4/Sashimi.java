@@ -74,19 +74,31 @@ public class Sashimi implements Sushi{
 
 	@Override
 	public boolean getHasRice() {
-		// TODO Auto-generated method stub
+		for (int i=0; i<ingredientArray.length; i++) {
+			if(ingredientArray[i].getIsRice()) {
+			return true;
+			}
+		}
 		return false;
 	}
 
 	@Override
 	public boolean getHasShellfish() {
-		// TODO Auto-generated method stub
+		for (int i=0; i<ingredientArray.length; i++) {
+			if(ingredientArray[i].getIsShellfish()) {
+				return true;
+			}
+		}
 		return false;
 	}
 
 	@Override
 	public boolean getIsVegetarian() {
-		// TODO Auto-generated method stub
+		for (int i=0; i<ingredientArray.length; i++) {
+			if(ingredientArray[i].getIsVegetarian()) {
+				return true;
+			}
+		}
 		return false;
 	}
 	

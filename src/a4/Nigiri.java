@@ -7,23 +7,23 @@ public class Nigiri implements Sushi{
 	protected IngredientPortion ingredientAmt;
 	protected IngredientPortion ingredientRiceAmt;
 	
-	public Nigiri(NigiriType _typeOne) {
+	public Nigiri(NigiriType _type) {
 		
 		ingredientPortionArray = new IngredientPortion[15];
 
-		if (_typeOne == NigiriType.TUNA) {
+		if (_type == NigiriType.TUNA) {
 			ingredientName = "tuna nigiri";
 			ingredientAmt = new TunaPortion(0.75);
-		} else if (_typeOne == NigiriType.YELLOWTAIL) {
+		} else if (_type == NigiriType.YELLOWTAIL) {
 			ingredientName = "yellowtail nigiri";
 			ingredientAmt = new YellowtailPortion(0.75);
-		} else if (_typeOne == NigiriType.EEL) {
+		} else if (_type == NigiriType.EEL) {
 			ingredientName = "eel nigiri";
 			ingredientAmt = new EelPortion(0.75);
-		} else if (_typeOne == NigiriType.CRAB) {
+		} else if (_type == NigiriType.CRAB) {
 			ingredientName = "crab nigiri";
 			ingredientAmt = new CrabPortion(0.75);
-		} else if (_typeOne == NigiriType.SHRIMP) {
+		} else if (_type == NigiriType.SHRIMP) {
 			ingredientName = "shrimp nigiri";
 			ingredientAmt = new ShrimpPortion(0.75);
 		}
