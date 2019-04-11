@@ -3,7 +3,6 @@ package a4;
 public class Nigiri implements Sushi{
 	public enum NigiriType {TUNA, YELLOWTAIL, EEL, CRAB, SHRIMP};
 
-	
 	//public?
 	protected String ingredientName;
 	protected IngredientPortion[] ingredientPortionArray;
@@ -33,7 +32,8 @@ public class Nigiri implements Sushi{
 			if (ingredientPortionArray[i] == null) {
 				throw new RuntimeException("ingredients array can't be null");
 			}
-		}	}
+		}	
+	}
 
 	@Override
 	public String getName() {
