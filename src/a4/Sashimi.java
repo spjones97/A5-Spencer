@@ -29,7 +29,7 @@ public class Sashimi implements Sushi{
 		for (int i=0; i<ingredientArray.length; i++) {
 			result = result + ingredientArray[i].getCalories();
 		}
-		integer = (int)(result + 0.5)
+		integer = (int)(result + 0.5);
 		
 		return integer;
 	}
