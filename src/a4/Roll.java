@@ -29,22 +29,19 @@ public class Roll implements Sushi{
 		
 		IngredientPortion[] ingredArray = new IngredientPortion[totalLength];
 		
-		while( i<ingredientPortionArray.length) {
-				while (z<counter) {
-					if(ingredientPortionArray[z].getName().equals(ingredArray[i].getName())){
+		while(i<ingredientPortionArray.length) {
+			if (has(ingredientPortionArray[i], ingredArray, counter)) {
 						for (int f=0; f<counter; f++) {
 							if (ingredientPortionArray[i].getName().equals(ingredArray[f].getName())) {
 								ingredArray[f] = ingredArray[f].combine(ingredientPortionArray[z]);
 							}
-						}
-					} else {
-						ingredArray[counter] = ingredientPortionArray[i];
-						counter++;
-					}
-				z++;
-				}
-				i++;
-		}
+						} 					
+			} else {
+				ingredArray[counter] = ingredientPortionArray[i];
+				counter++;
+				} 
+			i++;
+			}
 		
 		IngredientPortion seaweedPortion = new SeaweedPortion(0.1);
 		
@@ -138,6 +135,16 @@ public class Roll implements Sushi{
 			}
 		}
 		return true;
+	}
+	
+	public static boolean has (IngredientPortion ingredientPortion, IngredientPortion[] ingredientArray, int counter) {
+		int i = 0;
+		while (i<counter) {
+			if (ingredientPortion.getName().equals(ingredientArray[i].getName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
