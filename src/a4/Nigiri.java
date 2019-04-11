@@ -32,9 +32,10 @@ public class Nigiri implements Sushi{
 			ingredientAmt = new ShrimpPortion(0.75);
 		}
 		
-		ingredientPortionArray[0] = ingredientAmt;
-		ingredientPortionArray[1] = ingredientRiceAmt;
-
+		for(int i=0; i<ingredientPortionArray.length; i++) {
+		ingredientPortionArray[i] = ingredientAmt;
+		ingredientPortionArray[i] = ingredientRiceAmt;
+		}
 		
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			if (ingredientPortionArray[i] == null) {
