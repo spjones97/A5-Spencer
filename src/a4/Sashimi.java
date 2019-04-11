@@ -7,13 +7,13 @@ public class Sashimi implements Sushi{
 	protected IngredientPortion[] ingredientArray;
 	protected IngredientPortion ingredientAmt;
 	
-	public Sashimi(SashimiType _type) {
+	public Sashimi(SashimiType type) {
 	}
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return ingredientName;
+		return this.ingredientName;
 	}
 
 	@Override
