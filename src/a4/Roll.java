@@ -83,11 +83,10 @@ public class Roll implements Sushi{
 	
 	public double getCost() {
 		double result = 0.0;
-		double value = 0.0;
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			result += ingredientPortionArray[i].getCost();
 		}
-		value = (((int)(result * 100)) + (0.5)) / 100;
+		double value = (int)((result * 100.0) + 0.5) / 100.0;
 		return value;
 	}
 	
