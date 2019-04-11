@@ -1,12 +1,16 @@
 package a4;
 
-public class Nigiri implements Sushi{
-	protected String name;
-	protected IngredientPortion[] ingredients;
-	protected enum NigiriType {TUNA, YELLOTAIL, EEL, CRAB, SHRIMP};
+public class Sashimi implements Sushi{
+
+		//protected?
 	
-	public Nigiri(NigiriType typeA) {
-		
+	String name;
+	IngredientPortion[] ingredientAmt;
+	IngredientPortion otherIngredientAmt;
+	public enum SashimiType {TUNA, YELLOWTAIL, EEL, CRAB, SHRIMP};
+	
+	public Sashimi(SashimiType typeOne) {
+		ingredientAmt = new IngredientPortion[1];
 	}
 
 	@Override
@@ -50,4 +54,5 @@ public class Nigiri implements Sushi{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
 }
