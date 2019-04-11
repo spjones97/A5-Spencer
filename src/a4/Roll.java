@@ -8,10 +8,6 @@ public class Roll implements Sushi{
 
 		ingredientPortionArray = new IngredientPortion[50];
 		
-		if (ingredientName == null) {
-			throw new RuntimeException("ingredientName must not be null");
-		}
-		
 		ingredientPortionArray = roll_ingredients.clone();
 		
 		if(ingredientPortionArray.length == 0) {
@@ -45,20 +41,23 @@ public class Roll implements Sushi{
 		
 		IngredientPortion seaweedPortion = new SeaweedPortion(0.1);
 		int y=0; 
-		
-		if (has(seaweedPortion, ingredArray, counter)) {
+		int b = 0;
+		while (b<counter) {
+			if(seaweedPortion.getName().equals(ingredArray[b].getName())){
 				while(y<counter) {
 					if((ingredArray[y].getName().equals("seaweed")) && (ingredArray[y].getAmount() <0.1)) {
 							IngredientPortion seaweeds = new SeaweedPortion(0.1 - ingredArray[y].getAmount());
 							ingredArray[y] = ingredArray[y].combine(seaweeds);
 						}
 					y++;
-					}
-			} else { //might need to change
+				}
+			}else { //might need to change
 				ingredArray[counter] = new SeaweedPortion(0.1);
 				counter++;
-			}
-			
+			} 
+			b++;
+		}
+		
 		IngredientPortion[] countArray = new IngredientPortion[counter];
 		int f=0;
 		while(f<counter ) {
@@ -69,19 +68,17 @@ public class Roll implements Sushi{
 		
 }
 	
-	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return ingredientName;
 	}
 
-	@Override
+	
 	public IngredientPortion[] getIngredients() {
 		// TODO Auto-generated method stub
 		return ingredientPortionArray;
 	}
-
-	@Override
+	
 	public int getCalories() {
 		double result = 0.0;
 		double holder = 0.0;
@@ -93,8 +90,7 @@ public class Roll implements Sushi{
 		integer = (int)(result + 0.5);
 		return integer;
 	}
-
-	@Override
+	
 	public double getCost() {
 		double result = 0.0;
 		double holder = 0.0;
@@ -106,8 +102,7 @@ public class Roll implements Sushi{
 		value = (int)((result + 100) + 0.5) / 100;
 		return value;
 	}
-
-	@Override
+	
 	public boolean getHasRice() {
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			if (!ingredientPortionArray[i].getIsRice()) {
@@ -116,8 +111,7 @@ public class Roll implements Sushi{
 		}
 		return true;
 	}
-
-	@Override
+	
 	public boolean getHasShellfish() {
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			if (!ingredientPortionArray[i].getIsShellfish()) {
@@ -127,7 +121,6 @@ public class Roll implements Sushi{
 		return true;
 	}
 
-	@Override
 	public boolean getIsVegetarian() {
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			if (!ingredientPortionArray[i].getIsVegetarian()) {
