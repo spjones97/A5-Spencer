@@ -44,21 +44,21 @@ public class Roll implements Sushi{
 			}
 		
 		IngredientPortion seaweedPortion = new SeaweedPortion(0.1);
+		int y=0; 
 		
-		while (z<counter) {
-			if (seaweedPortion.getName().equals(ingredArray[z].getName())) {
-				for(int y=0; y<counter; y++) {
+		if (has(seaweedPortion, ingredArray, counter)) {
+				while(y<counter) {
 					if((ingredArray[y].getName().equals("seaweed")) && (ingredArray[y].getAmount() <0.1)) {
 							IngredientPortion seaweeds = new SeaweedPortion(0.1 - ingredArray[y].getAmount());
 							ingredArray[y] = ingredArray[y].combine(seaweeds);
 						}
+					y++;
 					}
 			} else { //might need to change
 				ingredArray[counter] = new SeaweedPortion(0.1);
 				counter++;
 			}
-			z++;
-		}
+			
 		IngredientPortion[] countArray = new IngredientPortion[counter];
 		int f=0;
 		while(f<counter ) {
