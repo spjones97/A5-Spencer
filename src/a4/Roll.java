@@ -11,21 +11,7 @@ public class Roll implements Sushi{
 		ingredientName = name;
 		
 		ingredientPortionArray = roll_ingredients.clone();
-
-		if (name == null) {
-			throw new RuntimeException ("no");
-		}
-		
-		
-		if(ingredientPortionArray.length == 0 || ingredientPortionArray == null) {
-			throw new RuntimeException("no");
-		}
-		for (int i=0; i<ingredientPortionArray.length; i++) {
-			if(ingredientPortionArray[i].equals(null)) {
-				throw new RuntimeException("no");
-			}
-		}
-				
+	
 		int totalLength = roll_ingredients.length + 1;
 		int counter = 0;
 		int i=0;
@@ -34,11 +20,11 @@ public class Roll implements Sushi{
 		
 		while(i<ingredientPortionArray.length) {
 			if (has(ingredArray, counter, ingredientPortionArray[i])) {
-						for (int f=0; f<counter; f++) {
-							if (ingredientPortionArray[i].getName().equals(ingredArray[f].getName())) {
-								ingredArray[f] = ingredArray[f].combine(ingredientPortionArray[i]);
-							}
-						} 					
+				for (int f=0; f<counter; f++) {
+					if (ingredientPortionArray[i].getName().equals(ingredArray[f].getName())) {
+						ingredArray[f] = ingredArray[f].combine(ingredientPortionArray[i]);
+					}
+				} 					
 			} else {
 				ingredArray[counter] = ingredientPortionArray[i];
 				counter++;

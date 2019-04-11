@@ -72,9 +72,9 @@ public class IngredientPortionImpl implements IngredientPortion{
 			throw new RuntimeException("IngredientPortion must be same");
 		}
 		
-		IngredientPortion IngredientPortionObject = new IngredientPortionImpl(iObject, amt + secondIngred.getAmount());
+		IngredientPortion ingredientPortionObject = new IngredientPortionImpl(iObject, amt + secondIngred.getAmount());
 		
-		return IngredientPortionObject;
+		return ingredientPortionObject;
 	}
 	
 }
