@@ -136,6 +136,7 @@ public class Roll implements Sushi{
 			if (ingredientPortion.getName().equals(ingredientArray[i].getName())) {
 				return true;
 			}
+			i++;
 		}
 		return false;
 	}
