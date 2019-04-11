@@ -11,7 +11,7 @@ public class Rice extends IngredientImple{
 	}
 	
 	public boolean getIsVegetarian() {
-		return false;
+		return true;
 	}
 	
 	public boolean getIsShellfish() {
