@@ -21,7 +21,7 @@ public class IngredientImple implements Ingredient{
 	
 	public double getCaloriesPerDollar() {
 		double caloriesPerDollar = caloriePerOz / pricePerOz;
-		return (caloriesPerDollar);
+		return caloriesPerDollar;
 	}
 
 	
@@ -46,7 +46,6 @@ public class IngredientImple implements Ingredient{
 				if (subtracted <= 0.1) {
 					return true;
 				}
-				
 			} return false;
 		}
 		return false;
