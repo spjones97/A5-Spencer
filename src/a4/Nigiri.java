@@ -61,9 +61,10 @@ public class Nigiri implements Sushi{
 	public int getCalories() {
 		double result = 0;
 		int finalValue = 0;
-		for(int i=0; i<ingredientPortionArray.length; i++) {
-			result = result + ingredientPortionArray[i].getCalories();
-		}
+		result = ingredientPortionArray[1].getCalories() + ingredientPortionArray[2].getCalories();
+//		for(int i=0; i<ingredientPortionArray.length; i++) {
+//			result = result + ingredientPortionArray[i].getCalories();
+//		}
 		finalValue = (int)(result + 0.5);
 		
 		return finalValue;
