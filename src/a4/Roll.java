@@ -7,17 +7,22 @@ public class Roll implements Sushi{
 	public Roll(String name, IngredientPortion[] roll_ingredients) {
 
 		ingredientPortionArray = new IngredientPortion[50];
+				
+		ingredientName = name;
+		if (name == null) {
+			throw new RuntimeException ("no");
+		}
 		
 		ingredientPortionArray = roll_ingredients.clone();
+
 		
 		if(ingredientPortionArray.length == 0) {
-			throw new RuntimeException("ingredient array must not contain null");
-			
-		}
-		if (ingredientPortionArray == null) {
-			throw new RuntimeException("no");
+			if (ingredientPortionArray == null) {
+				throw new RuntimeException("no");
+			}
 		}
 		
+				
 		int totalLength = roll_ingredients.length + 1;
 		int counter = 0;
 		int z=0;
@@ -54,7 +59,7 @@ public class Roll implements Sushi{
 			else { //might need to change
 				ingredArray[counter] = new SeaweedPortion(0.1);
 				counter++;
-			} 
+			}
 
 		
 		IngredientPortion[] countArray = new IngredientPortion[counter];
