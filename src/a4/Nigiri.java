@@ -9,7 +9,11 @@ public class Nigiri implements Sushi{
 	
 	public Nigiri(NigiriType _type) {
 		
-		ingredientPortionArray = new IngredientPortion[15];
+		int amtOfIngredients = 2;
+		
+		ingredientPortionArray = new IngredientPortion[amtOfIngredients];
+		ingredientRiceAmt = new RicePortion(0.5);
+		
 
 		if (_type == NigiriType.TUNA) {
 			ingredientName = "tuna nigiri";
@@ -27,13 +31,18 @@ public class Nigiri implements Sushi{
 			ingredientName = "shrimp nigiri";
 			ingredientAmt = new ShrimpPortion(0.75);
 		}
-		ingredientPortionArray[0] = ingredientAmt;
+		
+		for(int i=0; i<2; i++) {
+		ingredientPortionArray[i] = ingredientAmt;
+		ingredientPortionArray[i] = ingredientRiceAmt;
+		}
 		
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			if (ingredientPortionArray[i] == null) {
 				throw new RuntimeException("ingredients array can't be null");
 			}
-		}	
+		}
+		
 	}
 
 	@Override
