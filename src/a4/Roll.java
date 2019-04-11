@@ -33,7 +33,7 @@ public class Roll implements Sushi{
 			if (has(ingredientPortionArray[i], ingredArray, counter)) {
 						for (int f=0; f<counter; f++) {
 							if (ingredientPortionArray[i].getName().equals(ingredArray[f].getName())) {
-								ingredArray[f] = ingredArray[f].combine(ingredientPortionArray[z]);
+								ingredArray[f] = ingredArray[f].combine(ingredientPortionArray[i]);
 							}
 						} 					
 			} else {
