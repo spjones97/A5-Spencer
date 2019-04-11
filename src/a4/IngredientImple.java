@@ -37,22 +37,21 @@ public class IngredientImple implements Ingredient{
 	}
 
 	
-	public boolean equals(Ingredient other) {
-		double subtracted = Math.abs(getPricePerOunce() - other.getPricePerOunce());
-		String y = other.getName();
+	public boolean equals(Ingredient secondIngred) {
+		double subtracted = Math.abs(getPricePerOunce() - secondIngred.getPricePerOunce());
+		String y = secondIngred.getName();
 		
 		if(getName().equals(y)) {
-			if (getCaloriesPerOunce() == other.getCaloriesPerOunce()) {
+			if (getCaloriesPerOunce() == secondIngred.getCaloriesPerOunce()) {
 				if (subtracted <= 0.1) {
 					return true;
-				}
+				} return false;
 			} return false;
-		}
-		return false;
+		} return false;
 	}
 	
 	
-	//Overridden 
+	//Overridden default statements
 	
 	public boolean getIsVegetarian() {
 		// TODO Auto-generated method stub

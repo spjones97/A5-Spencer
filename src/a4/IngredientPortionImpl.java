@@ -59,20 +59,20 @@ public class IngredientPortionImpl implements IngredientPortion{
 	}
 
 	@Override
-	public IngredientPortion combine(IngredientPortion other) {
-		if (other == null) {
+	public IngredientPortion combine(IngredientPortion secondIngred) {
+		if (secondIngred == null) {
 			return this;
 		}
-		if (other.getAmount() < 0) {
+		if (secondIngred.getAmount()<0) {
 			throw new RuntimeException("IngredientPortion must have the same amount");
 		
 		}
 		
-		if (!getIngredient().equals(other.getIngredient())) {
+		if (!getIngredient().equals(secondIngred.getIngredient())) {
 			throw new RuntimeException("IngredientPortion must be same");
 		}
 		
-		IngredientPortion IngredientPortionObject = new IngredientPortionImpl(iObject, amt + other.getAmount());
+		IngredientPortion IngredientPortionObject = new IngredientPortionImpl(iObject, amt + secondIngred.getAmount());
 		
 		return IngredientPortionObject;
 	}
