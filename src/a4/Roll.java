@@ -87,8 +87,8 @@ public class Roll implements Sushi{
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			result += ingredientPortionArray[i].getCost();
 		}
-		value = (int)((result * 100) + 0.5) / 100;
-		return result;
+		value = ((result * 100) + 0.5) / 100;
+		return value;
 	}
 	
 	public boolean getHasRice() {
