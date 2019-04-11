@@ -26,7 +26,7 @@ public class Roll implements Sushi{
 		IngredientPortion[] ingredArray = new IngredientPortion[totalLength];
 		
 		while(i<ingredientPortionArray.length) {
-			if (has(ingredientPortionArray[i], ingredArray, counter)) {
+			if (has(ingredArray, counter, ingredientPortionArray[i])) {
 						for (int f=0; f<counter; f++) {
 							if (ingredientPortionArray[i].getName().equals(ingredArray[f].getName())) {
 								ingredArray[f] = ingredArray[f].combine(ingredientPortionArray[i]);
@@ -42,8 +42,7 @@ public class Roll implements Sushi{
 		IngredientPortion seaweedPortion = new SeaweedPortion(0.1);
 		int y=0; 
 		int b = 0;
-		while (b<counter) {
-			if(seaweedPortion.getName().equals(ingredArray[b].getName())){
+			if(has(ingredArray, counter, seaweedPortion)){
 				while(y<counter) {
 					if((ingredArray[y].getName().equals("seaweed")) && (ingredArray[y].getAmount() <0.1)) {
 							IngredientPortion seaweeds = new SeaweedPortion(0.1 - ingredArray[y].getAmount());
@@ -51,12 +50,12 @@ public class Roll implements Sushi{
 						}
 					y++;
 				}
-			}else { //might need to change
+			}
+			else { //might need to change
 				ingredArray[counter] = new SeaweedPortion(0.1);
 				counter++;
 			} 
-			b++;
-		}
+
 		
 		IngredientPortion[] countArray = new IngredientPortion[counter];
 		int f=0;
@@ -130,7 +129,7 @@ public class Roll implements Sushi{
 		return true;
 	}
 	
-	public static boolean has (IngredientPortion ingredientPortion, IngredientPortion[] ingredientArray, int counter) {
+	public static boolean has (IngredientPortion[] ingredientArray, int counter, IngredientPortion ingredientPortion) {
 		int i = 0;
 		while (i<counter) {
 			if (ingredientPortion.getName().equals(ingredientArray[i].getName())) {
