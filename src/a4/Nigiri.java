@@ -5,7 +5,7 @@ public class Nigiri implements Sushi{
 	protected IngredientPortion[] ingredients;
 	protected enum NigiriType {TUNA, YELLOTAIL, EEL, CRAB, SHRIMP};
 	
-	public Nigiri(NigiriType typeA) {
+	public Nigiri(NigiriType typeOne) {
 		
 	}
 
