@@ -3,9 +3,9 @@ package a4;
 public class Sashimi implements Sushi{
 	public enum SashimiType {TUNA, YELLOWTAIL, EEL, CRAB, SHRIMP};
 	
-	public String ingredientName;
-	public IngredientPortion[] ingredientArray;
-	public IngredientPortion ingredientAmt;
+	protected String ingredientName;
+	protected IngredientPortion[] ingredientArray;
+	protected IngredientPortion ingredientAmt;
 	
 	public Sashimi(SashimiType _type) {
 	}
