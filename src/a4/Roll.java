@@ -69,7 +69,7 @@ public class Roll implements Sushi{
 		while(f<counter ) {
 			countArray[f]=ingredArray[f];
 			f++;
-		}
+		}	
 		ingredientPortionArray=countArray;
 		
 }
@@ -103,7 +103,7 @@ public class Roll implements Sushi{
 		double value = 0.0;
 		for (int i=0; i<ingredientPortionArray.length; i++) {
 			holder = ingredientPortionArray[i].getCost();
-			result = result +holder;
+			result =+ ingredientPortionArray[i].getCost();
 		}
 		value = (int)((result + 100) + 0.5) / 100;
 		return value;
@@ -111,11 +111,11 @@ public class Roll implements Sushi{
 	
 	public boolean getHasRice() {
 		for (int i=0; i<ingredientPortionArray.length; i++) {
-			if (!ingredientPortionArray[i].getIsRice()) {
-				return false;
+			if (ingredientPortionArray[i].getIsRice()) {
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public boolean getHasShellfish() {
