@@ -13,7 +13,7 @@ public class Sashimi implements Sushi{
 		
 		if (_type == SashimiType.TUNA) {
 			ingredientName = "tuna sashimi";
-;			ingredientAmt = new TunaPortion(0.75);
+			ingredientAmt = new TunaPortion(0.75);
 		} else if (_type == SashimiType.YELLOWTAIL) {
 			ingredientName = "yellowtail sashimi";
 			ingredientAmt = new YellowtailPortion(0.75);

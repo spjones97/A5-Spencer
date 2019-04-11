@@ -1,53 +1,100 @@
 package a4;
 
 public class Nigiri implements Sushi{
-	protected String name;
-	protected IngredientPortion[] ingredients;
-	protected enum NigiriType {TUNA, YELLOTAIL, EEL, CRAB, SHRIMP};
+	public enum NigiriType {TUNA, YELLOWTAIL, EEL, CRAB, SHRIMP};
+
 	
-	public Nigiri(NigiriType typeOne) {
+	//public?
+	protected String ingredientName;
+	protected IngredientPortion[] ingredientPortionArray;
+	protected IngredientPortion ingredientAmt;
+	protected IngredientPortion ingredientRiceAmt;
+	
+	public Nigiri(NigiriType _typeOne) {
+		if (_typeOne == NigiriType.TUNA) {
+			ingredientName = "tuna nigiri";
+			ingredientAmt = new TunaPortion(0.75);
+		} else if (_typeOne == NigiriType.YELLOWTAIL) {
+			ingredientName = "yellowtail nigiri";
+			ingredientAmt = new YellowtailPortion(0.75);
+		} else if (_typeOne == NigiriType.EEL) {
+			ingredientName = "eel nigiri";
+			ingredientAmt = new EelPortion(0.75);
+		} else if (_typeOne == NigiriType.CRAB) {
+			ingredientName = "crab nigiri";
+			ingredientAmt = new CrabPortion(0.75);
+		} else if (_typeOne == NigiriType.SHRIMP) {
+			ingredientName = "shrimp nigiri";
+			ingredientAmt = new ShrimpPortion(0.75);
+		}
+		ingredientPortionArray[0] = ingredientAmt;
 		
-	}
+		for (int i=0; i<ingredientPortionArray.length; i++) {
+			if (ingredientPortionArray[i] == null) {
+				throw new RuntimeException("ingredients array can't be null");
+			}
+		}	}
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return null;
+		return ingredientName;
 	}
 
 	@Override
 	public IngredientPortion[] getIngredients() {
 		// TODO Auto-generated method stub
-		return null;
+		return ingredientPortionArray;
 	}
 
 	@Override
 	public int getCalories() {
-		// TODO Auto-generated method stub
-		return 0;
+		double result = 0;
+		int finalValue = 0;
+		for(int i=0; i<ingredientPortionArray.length; i++) {
+			result = result + ingredientPortionArray[i].getCalories();
+		}
+		finalValue = (int)(result + 0.5);
+		
+		return finalValue;
 	}
 
 	@Override
 	public double getCost() {
-		// TODO Auto-generated method stub
-		return 0;
+		double result = 0;
+		for (int i=0; i<ingredientPortionArray.length; i++) {
+			result = result + ingredientPortionArray[i].getCost();
+		}
+		return result;
 	}
 
 	@Override
 	public boolean getHasRice() {
-		// TODO Auto-generated method stub
-		return false;
+		for (int i=0; i<ingredientPortionArray.length; i++) {
+			if (!ingredientPortionArray[i].getIsRice()) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	@Override
 	public boolean getHasShellfish() {
-		// TODO Auto-generated method stub
+		for (int i=0; i<ingredientPortionArray.length; i++) {
+			if(ingredientPortionArray[i].getIsShellfish()) {
+				return true;
+			}
+		}
 		return false;
 	}
 
 	@Override
 	public boolean getIsVegetarian() {
-		// TODO Auto-generated method stub
+		for (int i=0; i<ingredientPortionArray.length; i++) {
+			if(ingredientPortionArray[i].getIsShellfish()) {
+				return true;
+			}
+		}
 		return false;
 	}
 }
