@@ -25,10 +25,11 @@ public class Roll implements Sushi{
 		int totalLength = roll_ingredients.length + 1;
 		int counter = 0;
 		int z=0;
+		int i=0;
 		
 		IngredientPortion[] ingredArray = new IngredientPortion[totalLength];
 		
-		for(int i=0; i<ingredientPortionArray.length; i++) {
+		while( i<ingredientPortionArray.length) {
 				while (z<counter) {
 					if(ingredientPortionArray[z].getName().equals(ingredArray[i].getName())){
 						for (int f=0; f<counter; f++) {
@@ -42,16 +43,17 @@ public class Roll implements Sushi{
 					}
 				z++;
 				}
+				i++;
 		}
 		
 		IngredientPortion seaweedPortion = new SeaweedPortion(0.1);
 		
 		while (z<counter) {
 			if (seaweedPortion.getName().equals(ingredArray[z].getName())) {
-				for(int i=0; i<counter; i++) {
-					if((ingredArray[i].getName().equals("seaweed")) && (ingredArray[i].getAmount() <0.1)) {
-							IngredientPortion seaweeds = new SeaweedPortion(0.1 - ingredArray[i].getAmount());
-							ingredArray[i] = ingredArray[i].combine(seaweeds);
+				for(int y=0; y<counter; y++) {
+					if((ingredArray[y].getName().equals("seaweed")) && (ingredArray[y].getAmount() <0.1)) {
+							IngredientPortion seaweeds = new SeaweedPortion(0.1 - ingredArray[y].getAmount());
+							ingredArray[y] = ingredArray[y].combine(seaweeds);
 						}
 					}
 			} else { //might need to change
@@ -61,17 +63,14 @@ public class Roll implements Sushi{
 			z++;
 		}
 		IngredientPortion[] countArray = new IngredientPortion[counter];
-		int i=0;
-		while(i<counter ) {
+		int f=0;
+		while(f<counter ) {
 			countArray[i]=ingredArray[i];
-			i++;
+			f++;
 		}
 		ingredientPortionArray=countArray;
 		
 }
-
-	
-	
 	
 	@Override
 	public String getName() {
