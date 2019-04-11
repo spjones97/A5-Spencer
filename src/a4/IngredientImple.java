@@ -39,14 +39,15 @@ public class IngredientImple implements Ingredient{
 	
 	public boolean equals(Ingredient other) {
 		double subtracted = Math.abs(getPricePerOunce() - other.getPricePerOunce());
+		String y = other.getName();
 		
-		if(getName().equals(other.getName())) {
+		if(getName().equals(y)) {
 			if (getCaloriesPerOunce() == other.getCaloriesPerOunce()) {
 				if (subtracted <= 0.1) {
 					return true;
 				}
 				
-			}
+			} return false;
 		}
 		return false;
 	}
