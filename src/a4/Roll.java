@@ -61,6 +61,7 @@ public class Roll implements Sushi{
 			counter++;
 		}
 
+		//new set of arrays
 		IngredientPortion[] countArray = new IngredientPortion[counter];
 		int f=0;
 		while(f<counter ) {
