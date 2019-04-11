@@ -2,14 +2,15 @@ package a4;
 
 public class Nigiri implements Sushi{
 	public enum NigiriType {TUNA, YELLOWTAIL, EEL, CRAB, SHRIMP};
-
-	//public?
 	protected String ingredientName;
 	protected IngredientPortion[] ingredientPortionArray;
 	protected IngredientPortion ingredientAmt;
 	protected IngredientPortion ingredientRiceAmt;
 	
 	public Nigiri(NigiriType _typeOne) {
+		
+		ingredientPortionArray = new IngredientPortion[15];
+
 		if (_typeOne == NigiriType.TUNA) {
 			ingredientName = "tuna nigiri";
 			ingredientAmt = new TunaPortion(0.75);
