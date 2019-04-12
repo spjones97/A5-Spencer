@@ -44,16 +44,16 @@ public class PlateImpl implements Plate{
 		if (sushi.getCost() >= price) {
 			throw new PlatePriceException ("no");
 		}
-		sushi = contents;
+		contents = sushi;
 		
 	}
 
 	
 	public boolean hasContents() {
-		if (contents != null) {
-			return true;
+		if (contents == null) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	
@@ -64,17 +64,18 @@ public class PlateImpl implements Plate{
 
 	
 	public Color getColor() {
-		// TODO Auto-generated method stub
 		return color;
 	}
 
 	
-	public double getProfit() {
-		double profit = 0.0;
+	public double getProfit() {		
 		if (!hasContents()) {
-		return 0.0;
-	} 		
-		return ((int)((profit = 100.0))) / 100.0;
+			return 0.0;
+		} 	
+		double profit = 0.0;
+
+		profit = price = contents.getCost();
+		return ((int)((profit * 100.0))) / 100.0;
 	}
 		
 }
