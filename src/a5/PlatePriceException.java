@@ -8,5 +8,10 @@ public class PlatePriceException extends Exception{
 	public double getIllegalPrice() {
 		return price;
 	}
-
+	public PlatePriceException(String string) {
+		super("price cannot be below 0");
+	}
+	public String getMessage() {
+		return super.getMessage() + "price";
+	}
 }
