@@ -8,15 +8,14 @@ public class PlateImpl implements Plate{
 	
 	public PlateImpl(Sushi _contents, Color _color, double _price) throws PlatePriceException{
 	
-		if (contents != null) {
-			if (contents.getCost() >= price) {
+		if (_contents != null) {
+			if (_contents.getCost() >= price) {
 				throw new PlatePriceException("the price is fucked; plateprice >= sushicost");	
 			}
-			
-			price = _price;
-			color = _color;
 		}
-		}
+		price = _price;
+		color = _color;
+	}
 	
 	public Sushi getContents() {
 		if (contents == null || contents.getIngredients().length == 0) {
@@ -69,7 +68,7 @@ public class PlateImpl implements Plate{
 
 	
 	public double getProfit() {		
-		if (!hasContents()) {
+		if (!this.hasContents()) {
 			return 0.0;
 		} 	
 		double profit = 0.0;

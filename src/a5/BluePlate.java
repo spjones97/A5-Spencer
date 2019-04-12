@@ -4,6 +4,6 @@ public class BluePlate extends PlateImpl{
 
 	public BluePlate(Sushi contents) throws PlatePriceException {
 		
-		super(contents, Color.GREEN, 2.0);
+		super(contents, Color.BLUE, 4.0);
 	}
 }

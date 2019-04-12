@@ -1,6 +1,6 @@
 package a5;
 
-	public interface Plate { 
+public interface Plate { 
 		   public enum Color {RED, GREEN, BLUE, GOLD};
 		   Sushi getContents(); 
 		   Sushi removeContents(); 
