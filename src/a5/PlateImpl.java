@@ -73,7 +73,7 @@ public class PlateImpl implements Plate{
 		} 	
 		double profit = 0.0;
 
-		profit = price = contents.getCost();
+		profit = price - contents.getCost();
 		return ((int)((profit * 100.0))) / 100.0;
 	}
 		
